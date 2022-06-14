@@ -8,40 +8,250 @@
     <title>Documentation</title>
   </head>
   <body>
-      <nav id="navbar">
-          <header>Elixir Documentation</header>
-          <a href="#Introduction" class="navlink">Introduction</a>
-      </nav>
-    <main id="main-doc">
-        <section class="main-section" id="Introduction">
-            <header>Introduction</header>
-            <p>
-              Elixir is a dynamic, functional language for building scalable and maintainable applications.
-            </p>
-            <p>
-              Elixir leverages the Erlang VM, known for running low-latency, distributed, and fault-tolerant systems. Elixir is successfully used in web development, embedded software, data ingestion, and multimedia processing, across a wide range of industries. Here is a peek:
-            </p>
-            <code>
-              iex> "Elixir" |> String.graphemes() |> Enum.frequencies()
-              %{"E" => 1, "i" => 2, "l" => 1, "r" => 1, "x" => 1}
-            </code>
-        </section>
+    <nav id="navbar">
+      <header>Elixir 'Kernel Module' Documentation</header>
+      <a href="#Introduction" class="nav-link">Introduction</a>
+      <a href="#Kernel" class="nav-link">Kernel</a>
+      <a href="#The_standard_library" class="nav-link">The standard library</a>
+      <a href="#Built-in_types" class="nav-link">Built-in types</a>
+      <a href="#Other_data_types" class="nav-link">Other data types</a>
+      <a href="#System_modules" class="nav-link">System modules</a>
+      <a href="#Protocols" class="nav-link">Protocols</a>
+      <a href="#Process-based_and_application-centric_functionality" class="nav-link">Process-based and application-centric functionality</a>
+      <a href="#Truthy_and_falsy_values" class="nav-link">Truthy and falsy values</a>
+      <a href="#Guards" class="nav-link">Guards</a>
+      <a href="#Structural_comparison" class="nav-link">Structural comparison</a>
+    </nav>
 
-        <section class="main-section" id="Kernel">
-            <header>Kernel</header>
-            <p><kbd>Kernel</kbd> is Elixir's default environment.</p>
-            <p>It mainly consists of:</p>
-            <ol>
-              <li>
-                basic language primitives, such as arithmetic operators, spawning of processes, data type handling, and others
-              </li>
-              <li>
-                macros for control-flow and defining new functionality (modules, functions, and the like)
-              </li>
-              <li>
-                guard checks for augmenting pattern matching
-              </li>
-            </ol>
-        </section>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <p>Elixir is a dynamic, functional language for building scalable and maintainable applications.</p>
+        <p>
+          Elixir leverages the Erlang VM, known for running low-latency, distributed, and fault-tolerant systems. Elixir
+          is successfully used in web development, embedded software, data ingestion, and multimedia processing, across
+          a wide range of industries. Here is a peek:
+        </p>
+        <code>
+          iex> "Elixir" |> String.graphemes() |> Enum.frequencies()
+          <br />
+          %{"E" => 1, "i" => 2, "l" => 1, "r" => 1, "x" => 1}
+        </code>
+      </section>
+
+      <section class="main-section" id="Kernel">
+        <header>Kernel</header>
+        <p><span class="mono_ul">Kernel</span> is Elixir's default environment.</p>
+        <p>It mainly consists of:</p>
+        <ol>
+          <li>
+            basic language primitives, such as arithmetic operators, spawning of processes, data type handling, and
+            others
+          </li>
+          <li>macros for control-flow and defining new functionality (modules, functions, and the like)</li>
+          <li>guard checks for augmenting pattern matching</li>
+        </ol>
+      </section>
+
+      <section class="main-section" id="The_standard_library">
+        <header>The standard library</header>
+        <p>
+          <span class="mono_ul">Kernel</span> provides the basic capabilities the Elixir standard library is built on
+          top of. It is recommended to explore the standard library for advanced functionality. Here are the main groups
+          of modules in the standard library (this list is not a complete reference, see the documentation for all
+          entries)
+        </p>
+      </section>
+
+      <section class="main-section" id="Built-in_types">
+        <header>Built-in types</header>
+        <p>The following modules handle Elixir built-in data types:</p>
+
+        <ul>
+          <li><span class="mono_ul">Atom</span> - literal constants with a name (true, false, and nil are atoms)</li>
+          <li><span class="mono_ul">Float</span> - numbers with floating point precision</li>
+          <li><span class="mono_ul">Function</span> - a reference to code chunk, created with the fn/1 special form</li>
+          <li><span class="mono_ul">Integer</span> - whole numbers (not fractions)</li>
+          <li><span class="mono_ul">List</span> - collections of a variable number of elements (linked lists)</li>
+          <li><span class="mono_ul">Map</span> - collections of key-value pairs</li>
+          <li><span class="mono_ul">Process</span> - light-weight threads of execution</li>
+          <li><span class="mono_ul">Port</span> - mechanisms to interact with the external world</li>
+          <li><span class="mono_ul">Tuple</span> - collections of a fixed number of elements</li>
+        </ul>
+
+        <p>There are two data types without an accompanying module:</p>
+        <ul>
+          <li>
+            <span class="mono_ul"> Bitstring</span> - a sequence of bits, created with
+            <span class="mono_ul"> Kernel.SpecialForms.<<>>/1</span>. When the number of bits is divisible by 8, they
+            are called binaries and can be manipulated with Erlang's <span class="mono_ul">:binary</span> module
+          </li>
+          <li>
+            <span class="mono_ul"> Reference</span> - a unique value in the runtime system, created with
+            <span class="mono_ul">make_ref/0</span>
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Other_data_types">
+        <header>Other data types</header>
+        <p>Elixir also provides other data types that are built on top of the types listed above. Some of them are:</p>
+
+        <ul>
+          <li><span class="mono_ul">Date</span> - year-month-day structs in a given calendar</li>
+          <li><span class="mono_ul">DateTime</span> - date and time with time zone in a given calendar</li>
+          <li><span class="mono_ul">Exception</span> - data raised from errors and unexpected scenarios</li>
+          <li><span class="mono_ul">MapSet</span> - unordered collections of unique elements</li>
+          <li><span class="mono_ul">NaiveDateTime</span> - date and time without time zone in a given calendar</li>
+          <li>
+            <span class="mono_ul">Keyword</span> - lists of two-element tuples, often representing optional values
+          </li>
+          <li><span class="mono_ul">Range</span> - inclusive ranges between two integers</li>
+          <li><span class="mono_ul">Regex</span> - regular expressions</li>
+          <li><span class="mono_ul">String</span> - UTF-8 encoded binaries representing characters</li>
+          <li><span class="mono_ul">Time</span> - hour:minute:second structs in a given calendar</li>
+          <li><span class="mono_ul">UR</span>I - representation of URIs that identify resources</li>
+          <li><span class="mono_ul">Version</span> - representation of versions and requirements</li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="System_modules">
+        <header>System modules</header>
+        <p>Modules that interface with the underlying system, such as:</p>
+        <ul>
+          <li><span class="mono_ul">IO</span> - handles input and output</li>
+          <li><span class="mono_ul">File</span> - interacts with the underlying file system</li>
+          <li><span class="mono_ul">Path</span> - manipulates file system paths</li>
+          <li><span class="mono_ul">System</span> - reads and writes system information</li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Protocols">
+        <header>Protocols</header>
+        <p>
+          Protocols add polymorphic dispatch to Elixir. They are contracts implementable by data types. See Protocol for
+          more information on protocols. Elixir provides the following protocols in the standard library:
+        </p>
+
+        <ul>
+          <li>Collectable - collects data into a data type</li>
+          <li>
+            Enumerable - handles collections in Elixir. The Enum module provides eager functions for working with
+            collections, the Stream module provides lazy functions
+          </li>
+          <li>Inspect - converts data types into their programming language representation</li>
+          <li>
+            List.Chars - converts data types to their outside world representation as charlists (non-programming based)
+          </li>
+          <li>
+            String.Chars - converts data types to their outside world representation as strings (non-programming based)
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Process-based_and_application-centric_functionality">
+        <header>Process-based and application-centric functionality</header>
+        <p>The following modules build on top of processes to provide concurrency, fault-tolerance, and more.</p>
+
+        <ul>
+          <li>Agent - a process that encapsulates mutable state</li>
+          <li>Application - functions for starting, stopping and configuring applications</li>
+          <li>GenServer - a generic client-server API</li>
+          <li>Registry - a key-value process-based storage</li>
+          <li>
+            Supervisor - a process that is responsible for starting, supervising and shutting down other processes
+          </li>
+          <li>Task - a process that performs computations</li>
+          <li>Task.Supervisor - a supervisor for managing tasks exclusively</li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Truthy_and_falsy_values">
+        <header>Truthy and falsy values</header>
+        <p>Besides the booleans true and false, Elixir has the concept of a "truthy" or "falsy" value.</p>
+
+        <ul>
+          <li>a value is truthy when it is neither false nor nil</li>
+          <li>a value is falsy when it is either false or nil</li>
+        </ul>
+        <p>
+          Elixir has functions, like and/2, that only work with booleans, but also functions that work with these
+          truthy/falsy values, like &&/2 and !/1.
+        </p>
+        <p>We can check the truthiness of a value by using the !/1 function twice.</p>
+
+        <p>Truthy values:</p>
+        <code>
+          iex> !!true<br />
+          true<br />
+          iex> !!5<br />
+          true<br />
+          iex> !![1,2]<br />
+          true<br />
+          iex> !!"foo"<br />
+          true
+        </code>
+
+        <p>Falsy values (of which there are exactly two):</p>
+        <code>
+          iex> !!false<br />
+          false<br />
+          iex> !!nil<br />
+          false
+        </code>
+      </section>
+
+      <section class="main-section" id="Guards">
+        <header>Guards</header>
+
+        <p>
+          This module includes the built-in guards used by Elixir developers. They are a predefined set of functions and
+          macros that augment pattern matching, typically invoked after the when operator. For example:
+        </p>
+
+        <code>
+          def drive(%User{age: age}) when age >= 16 do<br />
+          ... <br />
+          end
+        </code>
+        <p>
+          The clause above will only be invoked if the user's age is more than or equal to 16. Guards also support
+          joining multiple conditions with <span class="mono_ul">and</span> and <span class="mono_ul">or</span>. The
+          whole guard is <span class="mono_ul">true</span> if all guard expressions will evaluate to true. A more
+          complete introduction to guards is available in the Patterns and guards page.
+        </p>
+      </section>
+
+      <section class="main-section" id="Structural_comparison">
+        <header>Structural comparison</header>
+        <p>
+          The comparison functions in this module perform structural comparison. This means structures are compared
+          based on their representation and not on their semantic value. This is specially important for functions that
+          are meant to provide ordering, such as <span class="mono_ul">&gt;/2</span>,
+          <span class="mono_ul">&lt;/2</span>, <span class="mono_ul">&gt;=/2</span>,
+          <span class="mono_ul">&lt;=/2</span>, <span class="mono_ul">min/2</span>, and
+          <span class="mono_ul">max/2</span>. For example:
+        </p>
+
+        <code>~D[2017-03-31] > ~D[2017-04-01]</code>
+        <p>
+          will return true because structural comparison compares the :day field before :month or :year. Therefore, when
+          comparing structs, you often use the compare/2 function made available by the structs modules themselves:
+        </p>
+
+        <code>
+          iex> Date.compare(~D[2017-03-31], ~D[2017-04-01])<br />
+          :lt
+        </code>
+        <p>Alternatively, you can use the functions in the Enum module to sort or compute a maximum/minimum:</p>
+
+        <code>
+          iex> Enum.sort([~D[2017-03-31], ~D[2017-04-01]], Date)<br />
+          [~D[2017-03-31], ~D[2017-04-01]]<br />
+          iex> Enum.max([~D[2017-03-31], ~D[2017-04-01]], Date)<br />
+          ~D[2017-04-01]
+        </code>
+      </section>
+    </main>
   </body>
 </html>

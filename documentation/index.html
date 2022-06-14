@@ -10,17 +10,22 @@
   <body>
     <nav id="navbar">
       <header>Elixir 'Kernel Module' Documentation</header>
-      <a href="#Introduction" class="nav-link">Introduction</a>
-      <a href="#Kernel" class="nav-link">Kernel</a>
-      <a href="#The_standard_library" class="nav-link">The standard library</a>
-      <a href="#Built-in_types" class="nav-link">Built-in types</a>
-      <a href="#Other_data_types" class="nav-link">Other data types</a>
-      <a href="#System_modules" class="nav-link">System modules</a>
-      <a href="#Protocols" class="nav-link">Protocols</a>
-      <a href="#Process-based_and_application-centric_functionality" class="nav-link">Process-based and application-centric functionality</a>
-      <a href="#Truthy_and_falsy_values" class="nav-link">Truthy and falsy values</a>
-      <a href="#Guards" class="nav-link">Guards</a>
-      <a href="#Structural_comparison" class="nav-link">Structural comparison</a>
+      <div class="nav-links">
+        <a href="#Introduction" class="nav-link">Introduction</a>
+        <a href="#Kernel" class="nav-link">Kernel</a>
+        <a href="#The_standard_library" class="nav-link">The standard library</a>
+        <a href="#Built-in_types" class="nav-link">Built-in types</a>
+        <a href="#Other_data_types" class="nav-link">Other data types</a>
+        <a href="#System_modules" class="nav-link">System modules</a>
+        <a href="#Protocols" class="nav-link">Protocols</a>
+        <a href="#Process-based_and_application-centric_functionality" class="nav-link"
+          >Process-based and application-centric functionality</a
+        >
+        <a href="#Truthy_and_falsy_values" class="nav-link">Truthy and falsy values</a>
+        <a href="#Guards" class="nav-link">Guards</a>
+        <a href="#Structural_comparison" class="nav-link">Structural comparison</a>
+        <a href="#Reference" class="nav-link">Reference</a>
+      </div>
     </nav>
 
     <main id="main-doc">
@@ -134,17 +139,21 @@
         </p>
 
         <ul>
-          <li>Collectable - collects data into a data type</li>
+          <li><span class="mono_ul"> Collectable</span> - collects data into a data type</li>
           <li>
-            Enumerable - handles collections in Elixir. The Enum module provides eager functions for working with
-            collections, the Stream module provides lazy functions
-          </li>
-          <li>Inspect - converts data types into their programming language representation</li>
-          <li>
-            List.Chars - converts data types to their outside world representation as charlists (non-programming based)
+            <span class="mono_ul"> Enumerable</span> - handles collections in Elixir. The Enum module provides eager
+            functions for working with collections, the Stream module provides lazy functions
           </li>
           <li>
-            String.Chars - converts data types to their outside world representation as strings (non-programming based)
+            <span class="mono_ul"> Inspect</span> - converts data types into their programming language representation
+          </li>
+          <li>
+            <span class="mono_ul"> List.Chars</span> - converts data types to their outside world representation as
+            charlists (non-programming based)
+          </li>
+          <li>
+            <span class="mono_ul"> String.Chars</span> - converts data types to their outside world representation as
+            strings (non-programming based)
           </li>
         </ul>
       </section>
@@ -154,15 +163,18 @@
         <p>The following modules build on top of processes to provide concurrency, fault-tolerance, and more.</p>
 
         <ul>
-          <li>Agent - a process that encapsulates mutable state</li>
-          <li>Application - functions for starting, stopping and configuring applications</li>
-          <li>GenServer - a generic client-server API</li>
-          <li>Registry - a key-value process-based storage</li>
+          <li><span class="mono_ul">Agent</span> - a process that encapsulates mutable state</li>
           <li>
-            Supervisor - a process that is responsible for starting, supervising and shutting down other processes
+            <span class="mono_ul">Application</span> - functions for starting, stopping and configuring applications
           </li>
-          <li>Task - a process that performs computations</li>
-          <li>Task.Supervisor - a supervisor for managing tasks exclusively</li>
+          <li><span class="mono_ul">GenServer</span> - a generic client-server API</li>
+          <li><span class="mono_ul">Registry</span> - a key-value process-based storage</li>
+          <li>
+            <span class="mono_ul">Supervisor</span> - a process that is responsible for starting, supervising and
+            shutting down other processes
+          </li>
+          <li><span class="mono_ul">Task</span> - a process that performs computations</li>
+          <li><span class="mono_ul">Task.Supervisor</span> - a supervisor for managing tasks exclusively</li>
         </ul>
       </section>
 
@@ -252,6 +264,17 @@
           ~D[2017-04-01]
         </code>
       </section>
+
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <p>
+          All the documentation in this page is taken from
+          <a href="https://hexdocs.pm/elixir/Kernel.html" target="_blank">HexDocs</a>
+        </p>
+      </section>
+      <br />
+      <br />
+      <br />
     </main>
   </body>
 </html>

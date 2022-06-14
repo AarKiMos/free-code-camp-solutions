@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <title>Documentation</title>
+  </head>
+  <body>
+      <nav id="navbar">
+          <header>Elixir Documentation</header>
+          <a href="#Introduction" class="navlink">Introduction</a>
+      </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>
+              Elixir is a dynamic, functional language for building scalable and maintainable applications.
+            </p>
+            <p>
+              Elixir leverages the Erlang VM, known for running low-latency, distributed, and fault-tolerant systems. Elixir is successfully used in web development, embedded software, data ingestion, and multimedia processing, across a wide range of industries. Here is a peek:
+            </p>
+            <code>
+              iex> "Elixir" |> String.graphemes() |> Enum.frequencies()
+              %{"E" => 1, "i" => 2, "l" => 1, "r" => 1, "x" => 1}
+            </code>
+        </section>
+
+        <section class="main-section" id="Kernel">
+            <header>Kernel</header>
+            <p><kbd>Kernel</kbd> is Elixir's default environment.</p>
+            <p>It mainly consists of:</p>
+            <ol>
+              <li>
+                basic language primitives, such as arithmetic operators, spawning of processes, data type handling, and others
+              </li>
+              <li>
+                macros for control-flow and defining new functionality (modules, functions, and the like)
+              </li>
+              <li>
+                guard checks for augmenting pattern matching
+              </li>
+            </ol>
+        </section>
+  </body>
+</html>

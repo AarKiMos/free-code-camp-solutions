@@ -80,3 +80,27 @@ body {
   padding: 20px;
   border-radius: 10px;
 }
+
+@media screen and (max-width: 816px) {
+  body {
+    display: block;
+  }
+
+  #navbar {
+    height: auto;
+  }
+
+  #navbar > header {
+      text-align: center;
+      line-height: 70px;
+  }
+
+  .nav-links {
+    border: 2px solid black;
+    max-height: 40vh;
+  }
+
+  #main-doc {
+    overflow-y: unset;
+  }
+}

@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+
+:root {
+  /* CSS HEX
+--rich-black-fogra-29: #000814ff;
+--oxford-blue: #001d3dff;
+--prussian-blue: #003566ff;
+--mikado-yellow: #ffc300ff;
+--gold-web-golden: #ffd60aff; */
+
+  --black: #000814ff;
+  --deep-blue: #001d3dff;
+  --blue: #003566ff;
+  --yellow: #ffc300ff;
+  --golden: #ffd60aff;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+header {
+  position: fixed;
+  background-color: var(--yellow);
+  width: 100vw;
+  height: 100px;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: end;
+  padding-right: 50px;
+}
+
+.nav-link,
+.nav-link:active,
+.nav-link:hover,
+.nav-link:visited {
+  font-size: 1.9rem;
+  display: block;
+  padding: 0px 20px;
+  line-height: 100px;
+  text-decoration: none;
+  color: var(--deep-blue);
+}
+
+.nav-link:hover {
+  background-color: var(--deep-blue);
+  color: var(--yellow);
+}
+
+section {
+  padding-top: 100px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#welcome-section {
+  background-color: var(--deep-blue);
+  color: var(--yellow);
+}
+
+#welcome-section > h1 {
+  font-size: 5rem;
+  font-weight: 500;
+}
+
+#welcome-section > h3 {
+  color: var(--golden);
+  font-size: 2rem;
+  font-weight: 300;
+  font-style: italic;
+}
+
+#projects {
+  background-color: var(--blue);
+}
+
+#contact {
+  background-color: var(--deep-blue);
+  color: var(--yellow);
+}
+
+#contact > h1 {
+    font-size: 5rem;
+}
+
+#contact > h4 {
+    font-size: 2rem;
+}
+
+footer {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 4px solid var(--yellow);
+  background-color: var(--deep-blue);
+  font-size: 1.3rem;
+}

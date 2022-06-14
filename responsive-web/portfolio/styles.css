@@ -83,17 +83,120 @@ section {
   background-color: var(--blue);
 }
 
+#projects > h2 {
+  font-size: 3.5rem;
+  border-bottom: 4px solid var(--golden);
+  color: var(--golden);
+  font-weight: 400;
+}
+
+#project-pane {
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 70px;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.project-links {
+  flex: 0 0 auto;
+}
+
+.project-links,
+.project-links:active,
+.project-links:hover,
+.project-links:visited {
+  color: var(--yellow);
+  text-decoration: none;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.project-links:hover {
+  box-shadow: 0px 0px 10px 10px var(--golden);
+}
+
+.project-tile {
+  width: 300px;
+  height: 375px;
+  background-color: var(--deep-blue);
+}
+
+.project-image {
+  width: 300px;
+  height: 300px;
+}
+
+.project-title {
+  background-color: var(--deep-blue);
+  height: 75px;
+  line-height: 75px;
+}
+
+#profile-link {
+  display: block;
+  height: 70px;
+  background-color: var(--deep-blue);
+  font-size: 1.5rem;
+  line-height: 70px;
+  padding: 0px 40px;
+  margin-bottom: 50px;
+}
+
+#profile-link,
+#profile-link:active,
+#profile-link:hover,
+#profile-link:visited {
+  color: var(--yellow);
+  text-decoration: none;
+}
+#profile-link:hover {
+  color: var(--deep-blue);
+  background-color: var(--yellow);
+}
+
 #contact {
   background-color: var(--deep-blue);
   color: var(--yellow);
 }
 
 #contact > h1 {
-    font-size: 5rem;
+  font-size: 5rem;
+  font-weight: 500;
 }
 
 #contact > h4 {
-    font-size: 2rem;
+  font-size: rem;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 2rem;
+}
+
+#contact-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+  font-size: 1.6rem;
+}
+
+.contact-link,
+.contact-link:active,
+.contact-link:hover,
+.contact-link:visited {
+  text-decoration: none;
+  color: var(--yellow);
+  display: block;
+  padding: 0px 20px;
+}
+
+.contact-link:hover {
+  color: var(--deep-blue);
+  background-color: var(--yellow);
 }
 
 footer {
@@ -104,4 +207,15 @@ footer {
   border-top: 4px solid var(--yellow);
   background-color: var(--deep-blue);
   font-size: 1.3rem;
+  color: var(--golden);
+}
+
+@media screen and (max-width: 800px) {
+  header {
+    justify-content: center;
+  }
+
+  :root {
+    font-size: 12px;
+  }
 }

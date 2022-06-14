@@ -4,6 +4,9 @@
   font-family: monospace;
   text-decoration: underline;
   font-size: 1.1em;
+  background-color: #f7f7f7;
+  padding: 0px 4px;
+  border-radius: 5px;
 }
 
 body {
